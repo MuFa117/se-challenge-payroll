@@ -222,3 +222,44 @@ Evaluation of your submission will be based on the following criteria.
    they explained?
 1. Did you separate any concerns in your application? Why or why not?
 1. Does your solution use appropriate data types for the problem as described?
+
+
+
+
+# Wave Software Development Challenge - Bart Mucha proposition
+
+App has been made using Angular4 framework on client side + PHP micro API + MySQL database. Used webpack to pack Angular files.
+
+Files and folders description:
+  * build/  : folder includes developer files with Angular4 project, packing with webpack.
+  * production/   : folder includes compiled and packed files to instant run app 
+  * api/ : folder includes php files responsible for connection between front-end and database
+  * database_setup.sql : Database query to create MySQL table on (local or not) server
+  * api/config.php : file to specify database connection data + hour rates data
+  * bm-process.txt : file contains some process flows during development
+
+## Quick Setup
+  1. Create mysql database using database_setup.sql file 
+  2. Copy api/ folder to Apache server websites folder - get the api path (eg. http://localhost/NEW_API/api.php, where 'NEW_API' is an API folder name)
+  3. Update api/config.php with database creds (change index.html base href tag if needed)
+  4. Copy production files to server (eg. Apache) folders
+  5. Update:
+    5.1 In production mode: file main(...).js, find and replace: API_PATH to your new API path runned on server (in this example: http://localhost/NEW_API/api.php)
+    5.2 In development mode: src/app/data-provider/data.provider.service.ts with new API path
+
+## 1. DEMO
+  * to instantly see the app just go to the: http://crossandfit.pl/wave/
+  * this link uses exact same code as it's in production (only updated with database and api creds)
+
+## 2. Run locally - production mode
+  * make sure to update API path as described in 5.1 of Quick Setup.
+  * run app via browser using local server path
+
+## 3. Run locally - development mode
+  * make sure to update API path as described in 5.2 of Quick Setup.
+  * by cmd go to the folder with project 
+  * run command `ng serve`
+  * run server (by default under address http://localhost:4200 unless defined else)
+
+## What I'm proud of?
+  Use of not trivial database query. Tried to be as much user friendly as I can, and as much flexible I can (checking server file upload size)

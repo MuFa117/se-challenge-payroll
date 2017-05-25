@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+	height: 100%;
+}
+
+
+body{
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #22364c; 
+	height: 100%;
+    background-color: #EEE;
+}
+
+a{
+	color: #e18c26;
+}
+a:hover{
+	color: #e18c26;
+}

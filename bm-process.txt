@@ -1,0 +1,40 @@
+Concerns:
+	- date of half month
+	- last day of the month (to show)
+	- max file size (although, .csv are pretty small)
+
+Questions:
+	- can user be in both groups. 
+
+Etaps:
+	API:
+		- receive csv file
+			- check size, check format (header + footer)
+			- check report ID
+			- upload as temporary file
+			- parse csv file and save to database data
+				- save report ID as well for crosscheck
+		- get report data
+	CONFIG file:
+		- A, B 
+		- database user / password / database name
+	SETUP file:
+		- user config database
+	APP:
+		- upload file and report table available on one page
+
+Notes:
+	- make one insert instead of line by line (whole csv insert)
+
+FAQ:
+- Why pays are calculated on server
+	* Because those are set from the 'employer' level, so it shouldn't be on the client side
+
+
+What can be improved:
+	- server side validation for file format and format size
+	- add table 'reports' to track uploaded reportID's (right now it's tracked just from table hours)
+	- login / authentication
+	- TAG Coding messages from server to front
+	- when employee will do other job group task (change of query required, to separate job groups)
+	- consider uploading multiple files
